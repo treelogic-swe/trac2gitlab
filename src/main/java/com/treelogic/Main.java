@@ -27,6 +27,7 @@ public class Main {
     public static String PROJECT_NAME = "alltasksproject";
     public static boolean SSL_VALIDATION_DISABLED = false;
     public static final String DOMAIN = "example.com";
+    public static final String PATH_TO_TRAC_DB_FILE = "/path_to_trac_folder/trac.db";
 
     public static void main(String[] ss) throws SQLException, IOException, KeyManagementException, NoSuchAlgorithmException {
         if (SSL_VALIDATION_DISABLED) {
@@ -37,7 +38,7 @@ public class Main {
         Connection c = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:trac.db");
+            c = DriverManager.getConnection("jdbc:sqlite:" + PATH_TO_TRAC_DB_FILE);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
