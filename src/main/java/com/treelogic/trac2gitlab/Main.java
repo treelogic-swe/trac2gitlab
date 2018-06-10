@@ -1,4 +1,4 @@
-package com.treelogic;
+package com.treelogic.trac2gitlab;
 
 import org.gitlab.api.GitlabAPI;
 import org.gitlab.api.models.GitlabIssue;
